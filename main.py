@@ -5,6 +5,7 @@ import google.generativeai as genai
 
 # 載入我們的自訂工具
 from tools import weather_tool
+from tools import activity_tool
 
 # 1. 載入環境變數與安全檢查
 load_dotenv()
@@ -26,8 +27,9 @@ SYSTEM_INSTRUCTION = """
 [標準作業流程 SOP]
 1. 觀察使用者的請求，判斷是否需要外部資訊。
 2. 若使用者詢問跟天氣、活動安排有關的問題，必須優先呼叫 `get_weather` 工具取得準確的氣象與建議資料。
-3. 取得工具回傳的結果後，整合資訊並用親切、專業的口吻回覆使用者。
-4. 若使用者詢問不屬於工具範圍內的問題，則直接給予最佳的文字回答。
+3. 若使用者想要隨機活動建議、不知道做什麼好、想找事做，請呼叫 `get_random_activity` 工具取得建議。
+4. 取得工具回傳的結果後，整合資訊並用親切、專業的口吻回覆使用者。
+5. 若使用者詢問不屬於工具範圍內的問題，則直接給予最佳的文字回答。
 
 要求：
 - 時刻保持禮貌。
@@ -36,6 +38,10 @@ SYSTEM_INSTRUCTION = """
 
 # 4. 封裝 Tool 給 Gemini 使用
 # 因為 SDK 預設會讀取函式的名字作為 tool 名稱，所以這裡包裝成 get_weather
+def get_random_activity() -> str:
+    """取得一則隨機活動建議，回傳活動名稱與類型"""
+    return activity_tool.run()
+
 def get_weather(city: str) -> str:
     """取得指定城市的即時天氣，並根據天氣狀況判斷適合室內還是室外活動 (例如輸入 Taipei)"""
     return weather_tool.run(city)
@@ -49,7 +55,7 @@ def main():
     print("=" * 60)
     
     # 準備模型與 Tools
-    tools_list = [get_weather]
+    tools_list = [get_weather, get_random_activity]
     
     model = genai.GenerativeModel(
         model_name="gemini-2.5-flash",
@@ -96,6 +102,8 @@ def main():
                     # 實際執行外部工具
                     if fn_name == "get_weather":
                         tool_result = get_weather(**fn_args)
+                    elif fn_name == "get_random_activity":
+                        tool_result = get_random_activity()
                     else:
                         tool_result = f"Error: 找不到對應的工具 {fn_name}"
                         
