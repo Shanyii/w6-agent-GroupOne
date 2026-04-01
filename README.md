@@ -1,7 +1,7 @@
 # AI agent 開發分組實作
 
 > 課程：AI agent 開發 — Tool 與 Skill
-> 主題： 旅遊前哨站 /  偵探事務所 /  生活顧問
+> 主題：生活顧問
 
 ---
 
@@ -11,10 +11,9 @@
 
 | 使用者輸入   | Agent 行為                             | 負責組員 |
 | ------------ | -------------------------------------- | -------- |
-| （例：天氣） | 呼叫 weather_tool，查詢即時天氣        |          |
-| （例：景點） | 呼叫 search_tool，搜尋熱門景點         |          |
-| （例：建議） | 呼叫 advice_tool，取得隨機建議         |          |
-| （例：出發） | 執行 trip_briefing Skill，產出行前簡報 |          |
+| 天氣 | 呼叫 weather_tool，查詢即時天氣        |  楊珊頤 |
+| 活動 | 呼叫 activity_tool，隨機活動建議       |  林瑞城 |
+| 建議 | 呼叫 advice_tool，取得隨機建議         |  林瑞城 |
 
 ---
 
@@ -22,11 +21,11 @@
 
 | 姓名 | 負責功能     | 檔案        | 使用的 API |
 | ---- | ------------ | ----------- | ---------- |
-|      |              | `tools/`  |            |
-|      |              | `tools/`  |            |
-|      |              | `tools/`  |            |
-|      | Skill 整合   | `skills/` | —         |
-|      | Agent 主程式 | `main.py` | —         |
+| 楊珊頤 |              | `tools/`  |  https://wttr.in/{city}?format=j1           |
+| 林瑞城 |              | `tools/`  |  https://bored-api.appbrewery.com/random    |
+| 林瑞城 |              | `tools/`  |  https://api.adviceslip.com/advice          |
+|      | Skill 整合   | `skills/` | — |
+|      | Agent 主程式 | `main.py` | — |
 
 ---
 
