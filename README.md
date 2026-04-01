@@ -11,9 +11,9 @@
 
 | 使用者輸入   | Agent 行為                             | 負責組員 |
 | ------------ | -------------------------------------- | -------- |
-| 天氣 | 呼叫 weather_tool，查詢即時天氣        |  楊珊頤        |
-| 活動 | 呼叫 activity_tool，隨機活動建議       |  林瑞城        |
-| 建議 | 呼叫 advice_tool，取得隨機建議         |  林瑞城        |
+| 天氣 | 呼叫 weather_tool，查詢即時天氣        |  楊珊頤 |
+| 活動 | 呼叫 activity_tool，隨機活動建議       |  林瑞城 |
+| 建議 | 呼叫 advice_tool，取得隨機建議         |  林瑞城 |
 
 ---
 
@@ -21,11 +21,11 @@
 
 | 姓名 | 負責功能     | 檔案        | 使用的 API |
 | ---- | ------------ | ----------- | ---------- |
-| 楊珊頤 |              | `tools/`  |            |
-| 林瑞城 |              | `tools/`  |            |
-| 林瑞城 |              | `tools/`  |            |
-|      | Skill 整合   | `skills/` | —         |
-|      | Agent 主程式 | `main.py` | —         |
+| 楊珊頤 |              | `tools/`  |  https://wttr.in/{city}?format=j1           |
+| 林瑞城 |              | `tools/`  |  https://bored-api.appbrewery.com/random    |
+| 林瑞城 |              | `tools/`  |  https://api.adviceslip.com/advice          |
+|      | Skill 整合   | `skills/` | — |
+|      | Agent 主程式 | `main.py` | — |
 
 ---
 
