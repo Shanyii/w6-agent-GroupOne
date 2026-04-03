@@ -1,5 +1,5 @@
 import requests
-
+#註解
 TOOL = {
     "name": "get_random_activity",
     "description": "取得一則隨機活動建議，回傳活動名稱與類型",
