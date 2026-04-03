@@ -21,11 +21,11 @@
 
 | 姓名 | 負責功能     | 檔案        | 使用的 API |
 | ---- | ------------ | ----------- | ---------- |
-| 楊珊頤 |              | `tools/`  |  https://wttr.in/{city}?format=j1           |
-| 林瑞城 |              | `tools/`  |  https://bored-api.appbrewery.com/random    |
-| 林瑞城 |              | `tools/`  |  https://api.adviceslip.com/advice          |
-|      | Skill 整合   | `skills/` | — |
-|      | Agent 主程式 | `main.py` | — |
+| 楊姍頤 |  查詢當地天氣，判斷適合室內還是室外，根據天氣描述決定活動類型  | `tools/`  |  https://wttr.in/{city}?format=j1           |
+| 林瑞城 |  取得一則隨機活動建議  | `tools/`  |  https://bored-api.appbrewery.com/random    |
+| 林瑞城 |  取得一則今日人生建議  | `tools/`  |  https://api.adviceslip.com/advice          |
+| 楊姍頤 | Skill 整合   | `skills/` | — |
+| 楊姍頤 | Agent 主程式 | `main.py` | — |
 
 ---
 
