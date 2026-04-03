@@ -54,6 +54,8 @@ def run(city: str) -> str:
 
 # 簡單測試用
 if __name__ == "__main__":
+    import sys, io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
     print(run("Taipei"))
     print("-" * 30)
     print(run("London"))
