@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 生活顧問 - 智能助手</title>
+  <meta name="description" content="全方位 AI 生活顧問，幫您查詢天氣並給予具體生活建議。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="avatar-container">
+        <div class="agent-avatar">🤖</div>
+        <div class="status-dot"></div>
+      </div>
+      <div class="header-info">
+        <h1>AI 生活顧問</h1>
+        <p>線上 • 隨時為您服務</p>
+      </div>
+    </header>
+
+    <!-- Chat Area -->
+    <main class="chat-area" id="chatArea">
+      <!-- Agent initial message -->
+      <div class="message agent">
+        <div class="bubble">
+          您好！我是您的 AI 生活顧問 ✨<br>我可以幫您查詢天氣狀況、推薦行程，或是在您迷惘時給予生活指南。<br><br>請問今天有什麼我可以幫忙的呢？
+        </div>
+      </div>
+    </main>
+
+    <!-- Input Area -->
+    <footer class="input-area">
+      <div class="input-wrapper">
+        <input type="text" id="chatInput" class="chat-input" placeholder="例如：週末想去東京玩，天氣如何？..." autocomplete="off">
+        <button id="sendBtn" class="send-btn" aria-label="發送">
+          ➤
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
